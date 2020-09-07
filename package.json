@@ -1,9 +1,9 @@
 {
-  "name": "template-instance",
-  "version": "0.1.0",
-  "description": "A template repo for creating a SourceCred instance",
-  "repository": "git@github.com:sourcecred/template-instance.git",
-  "author": "SourceCred Team <contact@sourcecred.io>",
+  "name": "SecretPoints",
+  "version": "0.0.8",
+  "description": "SourceCred instance for Secret Network",
+  "repository": "git@github.com:SecretFoundation/SecretPoints.git",
+  "author": "James Waugh <james@secret.foundation>",
   "license": "MIT",
   "private": true,
   "dependencies": {
