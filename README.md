@@ -48,6 +48,9 @@ Get [Yarn] and then run `yarn` to install SourceCred and its dependencies. Updat
 
 - `yarn serve`
 
+**Deploy the frontend:**
+
+- `yarn run deploy` 
 
 If you want to clear the cached data, you can do so via:
 
