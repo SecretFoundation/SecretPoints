@@ -38,7 +38,7 @@ Get [Yarn] and then run `yarn` to install SourceCred and its dependencies. Updat
   these graphs get saved in `output/`.
 - `yarn score` computes Cred scores, combining data from all the chosen
   plugins
-- `yarn secret` distributes Secret according to the current Cred scores, and the config in `config/secret.json`
+- `yarn grain` distributes DevToken according to the current Cred scores, and the config in `config/grain.json`
 
 **Generate the frontend:**
 
@@ -48,6 +48,9 @@ Get [Yarn] and then run `yarn` to install SourceCred and its dependencies. Updat
 
 - `yarn serve`
 
+**Deploy the frontend:**
+
+- `yarn run deploy` 
 
 If you want to clear the cached data, you can do so via:
 
@@ -88,10 +91,10 @@ The Discourse plugin loads Discourse forums; currently, only one forum can be lo
 
 To deactivate a plugin, just remove it from the `bundledPlugins` array in the `sourcecred.json` file. You can also remove its `config/plugins/OWNER/NAME` directory for good measure.
 
-### Distributing Secret
+### Distributing DevToken
 
-This repo contains a GitHub action for distributing secret. It will run every Sunday and create a Pull Request with the ledger updated with the new secret balances based on the users cred scores. The amount of secret to get distributed every week can be defined in the `config/secret.json` file. There are two different policies that can be used to control how the secret gets distributed: 
-- `immediatePerWeek` splits the secret evenly based on everyone's Cred in the last week only.
-- `balancedPerWeek` distributes the secret consistently based on total lifetime cred scores. i.e. it balances the distribution of secret with the distribution of total historical cred.
+This repo contains a GitHub action for distributing DevToken. It will run every Sunday and create a Pull Request with the ledger updated with the new DevToken balances based on the users cred scores. The amount of DevToken to get distributed every week can be defined in the `config/grain.json` file. There are two different policies that can be used to control how the DevToken gets distributed: 
+- `immediatePerWeek` splits the DevToken evenly based on everyone's Cred in the last week only.
+- `balancedPerWeek` distributes the DevToken consistently based on total lifetime cred scores. i.e. it balances the distribution of DevToken with the distribution of total historical cred.
 
-The balanced policy enables redistribution of rewards. e.g. if someone has been historically "overpaid" with secret relative to their cred scores, that people will receive less secret in the balanced distribution while people who have been "underpaid" relative to their cred will receive more secret.
+The balanced policy enables redistribution of rewards. e.g. if someone has been historically "overpaid" with DevToken relative to their cred scores, that people will receive less DevToken in the balanced distribution while people who have been "underpaid" relative to their cred will receive more DevToken.
